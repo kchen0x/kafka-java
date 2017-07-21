@@ -6,10 +6,9 @@ import java.util.Arrays;
 import java.util.Properties;
 
 /**
- * Created by kunch on 11/21/16.
- *
+ * Created by kunch on 2/7/17.
  */
-public class SampleConsumer {
+public class AvroConsumer {
     private static final Properties props = new Properties();
 
     public static void main(String[] args) throws Exception {

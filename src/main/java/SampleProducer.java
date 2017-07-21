@@ -25,9 +25,12 @@ public class SampleProducer {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         Producer<String, String> producer = new KafkaProducer<String, String>(props);
 
-        for (int i = 0; i < 2; i++) {
-            producer.send(new ProducerRecord<String, String>("test", Integer.toString(i) ,"messages from java plugin."));
+        for (int i = 0; i < 100; i++) {
+            producer.send(new ProducerRecord<String, String>
+                    ("test", Integer.toString(i) ,"messages from java plugin."));
+            System.out.println("sent.\n");
         }
+        producer.flush();
         producer.close();
     }
 }
